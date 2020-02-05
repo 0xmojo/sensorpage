@@ -1,12 +1,24 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Temperature Sensor Information{% endblock %}
 {% block head %}
     {{ super() }}
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
-   {% endblock %}
+    <script>
+        $(function queryTemperature(){
+            $.ajax({
+                url: '/',
+                dataType: "html"
+            }).done(function(data) {
+                var result = '<div id="temp">' + $('#temp',data).html() + '</div>';
+                $('#temp').replaceWith(result);
+                window.setTimeout(queryTemperature, 5000);
+            });
+        });
+    </script>
+    {% endblock %}
 {% block content %}
-     <div id="temperature" >
+     <div id="temperature">
          <div style="font-size: 45%;">Current temperature</div>
-         {{ temperature }}
+         <div id="temp"> {{ temperature }} </div>
         </div>
     {% endblock %}
