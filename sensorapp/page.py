@@ -16,4 +16,13 @@ def index():
     # hand it over to the template render
     temperature = 24.4444
 
+    try:
+        from w1thermsensor import W1ThermSensor
+
+        sensor = W1ThermSensor()
+        temperature = sensor.get_temperature()
+
+    except ModuleNotFoundError:
+        print("No sensor connected or not executed on a raspberry pi")
+
     return render_template("index/home.html", temperature=temperature)
