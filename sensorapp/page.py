@@ -1,4 +1,5 @@
 import functools
+import random
 
 from flask import Blueprint
 from flask import flash
@@ -12,9 +13,9 @@ bp = Blueprint('home', __name__)
 
 @bp.route("/")
 def index():
-    #todo fetch a temperature and 
-    # hand it over to the template render
-    temperature = 24.4444
+
+    #simulate some number
+    temperature = round(random.uniform(20.0, 25.0), 2)
 
     try:
         from w1thermsensor import W1ThermSensor
