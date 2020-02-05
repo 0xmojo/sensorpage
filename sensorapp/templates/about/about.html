@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block head %}
+    {{ super() }}
+   {% endblock %}
+{% block navbar %}
+<ul> 
+    <li><a href="{{ url_for('about.about') }}" class="active"> About </a> </li>
+    <li><a href="{{ url_for('graph.graph') }}">Graph</a></li>
+    <li><a href="{{ url_for('index') }}">Temperature</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<h1> Sensor application</h1>
+<p> Developed by Peter Franzreb</p>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Graph{% endblock %}
+{% block head %}
+    {{ super() }}
+   {% endblock %}
+{% block navbar %}
+   <ul> 
+       <li><a href="{{ url_for('about.about') }}"> About </a> </li>
+       <li><a href="{{ url_for('graph.graph') }}" class="active">Graph</a></li>
+       <li><a href="{{ url_for('index') }}">Temperature</a></li>
+   </ul>
+{% endblock %}
+{% block content %}
+    <h1>Average temperature over time</h1>
+    <p class="important">
+     place holder for graph over time
+    </p>
+{% endblock %}

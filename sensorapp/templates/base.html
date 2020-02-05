@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %} Sensor App</title>
+    {% endblock %}
+</head>
+<body>
+    {% block navbar %}
+    <ul> 
+        <li><a href="{{ url_for('about.about') }}"> About </a> </li>
+        <li><a href="{{ url_for('graph.graph') }}">Graph</a></li>
+        <li><a href="{{ url_for('index') }}" class="active">Temperature</a></li>
+    </ul>
+    {% endblock %}
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2020 by <a href="https://de.linkedin.com/in/peter-franzreb-b60565146/">Peter Franzreb</a>.
+        {% endblock %}
+    </div>
+</body>
+</html>
