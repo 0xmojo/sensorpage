@@ -5,8 +5,8 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
    {% endblock %}
 {% block content %}
-    <h1>Current temperature:</h1>
-    <p class="important">
-     <div id="temperature" > {{ temperature }} </div>
-    </p>
-{% endblock %}
+     <div id="temperature" >
+         <div style="font-size: 45%;">Current temperature</div>
+         {{ temperature }}
+        </div>
+    {% endblock %}

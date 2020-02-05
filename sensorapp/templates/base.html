@@ -7,6 +7,7 @@
     {% endblock %}
 </head>
 <body>
+    <div id="central" >
     {% block navbar %}
     <ul> 
         <li><a href="{{ url_for('about.about') }}"> About </a> </li>
@@ -19,6 +20,7 @@
         {% block footer %}
         &copy; Copyright 2020 by <a href="https://de.linkedin.com/in/peter-franzreb-b60565146/">Peter Franzreb</a>.
         {% endblock %}
+    </div>
     </div>
 </body>
 </html>
